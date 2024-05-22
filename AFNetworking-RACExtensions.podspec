@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.8'
   s.requires_arc = true
   s.default_subspecs = 'NSURLConnection', 'NSURLSession'
+  s.dependency 'AFNetworking/NSURLConnection'
 
   s.subspec 'ExperimentalProgressCallbacks' do |ss|
     ss.dependency 'ReactiveCocoa/Core', '~> 2.0'
@@ -17,13 +18,11 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'NSURLConnection' do |ss|
-    ss.dependency 'AFNetworking/NSURLConnection'
     ss.dependency 'ReactiveCocoa/Core', '~> 2.0'
     ss.source_files = 'RACAFNetworking/AFURLConnectionOperation+RACSupport.{h,m}', 'RACAFNetworking/AFHTTPRequestOperationManager+RACSupport.{h,m}'
   end
-
+  
   s.subspec 'NSURLSession' do |ss|
-    ss.dependency 'AFNetworking/NSURLSession'
     ss.dependency 'ReactiveCocoa/Core', '~> 2.0'
     ss.source_files = 'RACAFNetworking/AFHTTPSessionManager+RACSupport.{h,m}'
   end
