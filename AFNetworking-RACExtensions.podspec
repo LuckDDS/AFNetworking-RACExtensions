@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.8'
   s.requires_arc = true
   s.default_subspecs = 'NSURLConnection', 'NSURLSession'
-  s.dependency 'AFNetworking/NSURLConnection'
+  s.dependency 'AFNetworking'
 
   s.subspec 'ExperimentalProgressCallbacks' do |ss|
     ss.dependency 'ReactiveCocoa/Core', '~> 2.0'
